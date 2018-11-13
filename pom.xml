@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<name>product-catalog-parent</name>
-	<description>All in one business support system solutions</description>
+	<description>Product Catalog APIs</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -30,17 +30,17 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://github.com/akki2488/mongo-springboot-angular.git</connection>
-		<developerConnection>scm:git:git@github.com:akki2488/mongo-springboot-angular.git</developerConnection>
-		<url>https://github.com/akki2488/mongo-springboot-angular</url>
+		<connection>scm:git:https://github.com/akki2488/bss-product-management.git</connection>
+		<developerConnection>scm:git:git@github.com:akki2488/bss-product-management.git</developerConnection>
+		<url>https://github.com/akki2488/bss-product-management</url>
 		<tag>v0.0.1</tag>
 	</scm>
 
 	<distributionManagement>
 		<repository>
-			<id>bintray-akki2488-global-e_commerce-solutions</id>
-			<name>akki2488-global-e_commerce-solutions</name>
-			<url>https://api.bintray.com/maven/akki2488/global-e_commerce-solutions/test-global-ecommerce/;publish=1</url>
+			<id>bintray-akki2488-bss-product-management</id>
+			<name>akki2488-bss-product-management</name>
+			<url>https://api.bintray.com/maven/akki2488/bss-product-management/bss-product-management/;publish=1</url>
 		</repository>
 	</distributionManagement>
 
@@ -51,20 +51,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -77,15 +68,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!--<plugin>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.5.2</version>
-					<configuration>
-						<useReleaseProfile>false</useReleaseProfile>
-						<releaseProfiles>release</releaseProfiles>
-						<autoVersionSubmodules>true</autoVersionSubmodules>
-					</configuration>
-				</plugin>-->
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
@@ -96,6 +78,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-
 </project>
