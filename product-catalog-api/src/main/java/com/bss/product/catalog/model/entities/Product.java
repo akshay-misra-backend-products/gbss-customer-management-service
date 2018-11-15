@@ -35,6 +35,9 @@ public class Product {
     @DBRef
     private Set<ProductCategory> productCategories;
 
+    @DBRef
+    private Set<Tags> tags;
+
     @NotBlank
     private String price;
 
@@ -87,6 +90,14 @@ public class Product {
 
     public void setProductCategories(Set<ProductCategory> productCategories) {
         this.productCategories = productCategories;
+    }
+
+    public Set<Tags> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<Tags> tags) {
+        this.tags = tags;
     }
 
     public String getPrice() {
