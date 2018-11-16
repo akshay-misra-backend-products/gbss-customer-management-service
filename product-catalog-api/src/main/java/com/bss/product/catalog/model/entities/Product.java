@@ -1,5 +1,6 @@
 package com.bss.product.catalog.model.entities;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 import javax.validation.constraints.NotBlank;
@@ -29,10 +30,8 @@ public class Product {
     @Size(max=1000)
     private String description;
 
-    @NotBlank
-    private String category;
-
     @DBRef
+    @NotBlank
     private Set<ProductCategory> productCategories;
 
     @DBRef
@@ -40,6 +39,8 @@ public class Product {
 
     @NotBlank
     private String price;
+
+    private String imageUrl;
 
     private boolean active;
 
@@ -76,20 +77,20 @@ public class Product {
         this.description = description;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public Set<ProductCategory> getProductCategories() {
         return productCategories;
     }
 
     public void setProductCategories(Set<ProductCategory> productCategories) {
         this.productCategories = productCategories;
+    }
+
+    public void addProductCategory(ProductCategory productCategory) {
+        this.productCategories.add(productCategory);
+    }
+
+    public void addProductCategories(Collection<ProductCategory> productCategories) {
+        this.productCategories.addAll(productCategories);
     }
 
     public Set<Tags> getTags() {
@@ -108,6 +109,14 @@ public class Product {
         this.price = price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public boolean isActive() {
         return active;
     }
@@ -123,7 +132,7 @@ public class Product {
     @Override
     public String toString() {
         return String.format(
-                "Product[id=%s, title='%s', description='%s', category='%s', price='%s', createdAt='%s']",
-                id, title, description, category, price, createdAt);
+                "Product[id=%s, title='%s', description='%s', productCategories='%s', tags='%s', price='%s', createdAt='%s']",
+                id, title, description, productCategories, tags, price, createdAt);
     }
 }
