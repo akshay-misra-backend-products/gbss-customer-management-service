@@ -1,4 +1,4 @@
-package com.bss.product.catalog;
+package com.bss;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
