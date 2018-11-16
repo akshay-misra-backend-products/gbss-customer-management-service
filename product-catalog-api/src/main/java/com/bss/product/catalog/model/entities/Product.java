@@ -1,11 +1,13 @@
 package com.bss.product.catalog.model.entities;
 
 import java.util.Date;
+import java.util.Set;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -29,6 +31,12 @@ public class Product {
 
     @NotBlank
     private String category;
+
+    @DBRef
+    private Set<ProductCategory> productCategories;
+
+    @DBRef
+    private Set<Tags> tags;
 
     @NotBlank
     private String price;
@@ -74,6 +82,22 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Set<ProductCategory> getProductCategories() {
+        return productCategories;
+    }
+
+    public void setProductCategories(Set<ProductCategory> productCategories) {
+        this.productCategories = productCategories;
+    }
+
+    public Set<Tags> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<Tags> tags) {
+        this.tags = tags;
     }
 
     public String getPrice() {
