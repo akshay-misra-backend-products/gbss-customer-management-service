@@ -1,11 +1,12 @@
 package com.bss.product.catalog.api.products;
 
 import com.bss.product.catalog.model.entities.Product;
+import com.bss.product.catalog.model.entities.ProductCategory;
 
 import java.util.List;
 
 /**
- * Created by akmi0814 on 11/13/2018.
+ * Created by Akshay Misra on 11/13/2018.
  */
 public interface ProductManagementService {
 
@@ -20,4 +21,14 @@ public interface ProductManagementService {
     boolean deleteProduct(String id);
 
     Product activateProduct(String id);
+
+    List<ProductCategory> getAllCategories();
+
+    ProductCategory getProductCategoryById(String id);
+
+    ProductCategory createProductCategory(ProductCategory category);
+
+    ProductCategory updateProductCategory(ProductCategory category);
+
+    boolean deleteProductCategory(String id);
 }

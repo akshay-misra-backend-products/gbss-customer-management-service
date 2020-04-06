@@ -1,7 +1,8 @@
 package com.bss.product.catalog.controllers;
 
-import com.bss.product.catalog.impl.products.ProductManagementServiceImpl;
+import com.bss.product.catalog.api.products.ProductManagementService;
 import com.bss.product.catalog.model.entities.Product;
+import com.bss.product.catalog.model.entities.ProductCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Created by Rocky on 09-08-2018.
+ * Created by Akshay Misra on 09-08-2018.
  */
 @RestController
 @RequestMapping("/")
@@ -25,7 +26,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    ProductManagementServiceImpl productManagementService;
+    ProductManagementService productManagementService;
 
     @GetMapping("/products")
     public List<Product> getAllProducts() {
@@ -50,5 +51,30 @@ public class ProductController {
     @DeleteMapping(value="/delete/{id}")
     public boolean deleteProduct(@PathVariable("id") String id) {
         return productManagementService.deleteProduct(id);
+    }
+
+    @GetMapping("/all/product-categories")
+    public List<ProductCategory> getAllCategories() {
+        return productManagementService.getAllCategories();
+    }
+
+    @PostMapping("/add/product-category")
+    public ProductCategory addCategory(@Valid @RequestBody ProductCategory category) {
+        return productManagementService.createProductCategory(category);
+    }
+
+    @GetMapping(value="/get/product-category/{id}")
+    public ProductCategory getCategoryById(@PathVariable("id") String id) {
+        return productManagementService.getProductCategoryById(id);
+    }
+
+    @PutMapping(value="/update/product-category")
+    public ProductCategory updateCategory(@Valid @RequestBody ProductCategory category) {
+        return productManagementService.updateProductCategory(category);
+    }
+
+    @DeleteMapping(value="/delete/product-category/{id}")
+    public boolean deleteCategory(@PathVariable("id") String id) {
+        return productManagementService.deleteProductCategory(id);
     }
 }

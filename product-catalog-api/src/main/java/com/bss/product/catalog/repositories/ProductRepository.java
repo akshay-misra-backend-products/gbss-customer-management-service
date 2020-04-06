@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by Rocky on 09-08-2018.
+ * Created by Akshay Misra on 09-08-2018.
  */
 @Repository
 public interface ProductRepository  extends MongoRepository<Product, String> {

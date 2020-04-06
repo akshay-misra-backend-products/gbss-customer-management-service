@@ -9,6 +9,7 @@
 
 	<name>product-catalog-parent</name>
 	<description>Product Catalog APIs</description>
+	<url>https://github.com/akshay-misra-backend-products/product-management</url>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -30,10 +31,10 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://github.com/akki2488/bss-product-management.git</connection>
-		<developerConnection>scm:git:git@github.com:akki2488/bss-product-management.git</developerConnection>
-		<url>https://github.com/akki2488/bss-product-management</url>
-		<tag>v0.0.1</tag>
+		<connection>scm:git:https://github.com/akshay-misra-backend-products/product-management.git</connection>
+		<developerConnection>scm:git:git@github.com:akshay-misra-backend-products/product-management.git</developerConnection>
+		<url>https://github.com/akshay-misra-backend-products/product-management</url>
+		<tag>0.0.1</tag>
 	</scm>
 
 	<distributionManagement>
@@ -69,4 +70,23 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray-akki2488-framework-core</id>
+			<name>bintray</name>
+			<url>https://dl.bintray.com/akki2488/framework-core</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray-akki2488-web-app-authentication</id>
+			<name>bintray</name>
+			<url>https://dl.bintray.com/akki2488/web-app-authentication</url>
+		</repository>
+	</repositories>
 </project>

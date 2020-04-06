@@ -1,34 +1,27 @@
 package com.bss.product.catalog.model.entities;
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.Set;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * Created by Rocky on 09-08-2018.
+ * Created by Akshay Misra on 09-08-2018.
  */
 
 @Document(collection="products")
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
-public class Product {
-
-    @Id
-    private String id;
+public class Product extends CatalogEntity {
 
     @NotBlank
     @Size(max=100)
     @Indexed(unique=true)
     private String title;
-
-    @Size(max=1000)
-    private String description;
 
     @DBRef
     @NotBlank
@@ -44,21 +37,11 @@ public class Product {
 
     private boolean active;
 
-    private Date createdAt = new Date();
-
     public Product() {
     }
 
     public Product(String title) {
         this.title = title;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -67,14 +50,6 @@ public class Product {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Set<ProductCategory> getProductCategories() {
@@ -125,14 +100,10 @@ public class Product {
         this.active = active;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
     @Override
     public String toString() {
         return String.format(
                 "Product[id=%s, title='%s', description='%s', productCategories='%s', tags='%s', price='%s', createdAt='%s']",
-                id, title, description, productCategories, tags, price, createdAt);
+                getId(), title, getDescription(), productCategories, tags, price, getCreatedAt());
     }
 }
