@@ -18,8 +18,8 @@
   "files":
   [
     {"includePattern": "pom.xml", "uploadPattern": "com/bss/product/catalog/product-catalog-parent/@project.version@/product-catalog-parent-@project.version@.pom"},
-    {"includePattern": "framework-core-api/pom.xml", "uploadPattern": "com/bss/product/catalog/product-catalog-api/@project.version@/product-catalog-api-@project.version@.pom"},
-    {"includePattern": "framework-core-api/target/(.*\.jar)", "uploadPattern": "com/bss/product/catalog/product-catalog-api/@project.version@/$1"}
+    {"includePattern": "product-catalog-api/pom.xml", "uploadPattern": "com/bss/product/catalog/product-catalog-api/@project.version@/product-catalog-api-@project.version@.pom"},
+    {"includePattern": "product-catalog-api/target/(.*\.jar)", "uploadPattern": "com/bss/product/catalog/product-catalog-api/@project.version@/$1"}
   ],
   "publish": true
 }
