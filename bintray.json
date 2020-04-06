@@ -6,7 +6,7 @@
     "issue_tracker_url": "@project.url@/issues",
     "vcs_url": "@project.url@",
     "licenses": ["Apache-2.0"],
-    "labels": ["core", "bss-product-management"],
+    "labels": ["product-catalog", "product-management"],
     "public_download_numbers": true,
     "public_stats": true
   },

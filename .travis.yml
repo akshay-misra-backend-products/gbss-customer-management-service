@@ -28,5 +28,5 @@ deploy:
    user: akki2488
    key: $BINTRAY_API_KEY
    on:
-    repo: akshay-misra-backend-products/bss-product-management
+    repo: akshay-misra-backend-products/product-management
     tags: true
