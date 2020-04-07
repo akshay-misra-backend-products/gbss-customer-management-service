@@ -1,8 +1,6 @@
 package com.bss.product.catalog.model.entities;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.IndexDirection;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
@@ -13,7 +11,7 @@ import java.util.Locale;
 /**
  * Created by Akshay Misra on 06-04-2020.
  */
-@Document(collection="catalog")
+@Document(collection="catalogs")
 public class Catalog {
 
     @Id
@@ -21,7 +19,6 @@ public class Catalog {
 
     @NotBlank
     @Size(max=100)
-    @Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
     private String name;
 
     @Size(max=1000)

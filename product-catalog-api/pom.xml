@@ -40,13 +40,13 @@
 		<dependency>
 			<groupId>com.web-app-authentication</groupId>
 			<artifactId>web-app-auth-framework</artifactId>
-			<version>0.0.1.RELEASE</version>
+			<version>0.0.2.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.framework.core</groupId>
 			<artifactId>framework-core-api</artifactId>
-			<version>0.0.1.RELEASE</version>
+			<version>0.0.2.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
