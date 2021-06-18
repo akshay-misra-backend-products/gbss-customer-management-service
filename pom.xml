@@ -2,113 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.bss.product.catalog</groupId>
-	<artifactId>product-catalog-parent</artifactId>
-	<version>0.0.1</version>
+	<groupId>com.gbss.customer.management</groupId>
+	<artifactId>customer-management-parent</artifactId>
+	<version>0.1.0</version>
 	<packaging>pom</packaging>
 
-	<name>product-catalog-parent</name>
-	<description>Product Catalog APIs</description>
-	<url>https://github.com/akshay-misra-backend-products/product-management</url>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.4.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
+	<name>customer-management-parent</name>
+	<description>Customer management application module.</description>
+	<url>https://github.com/akshay-misra-backend-products/customer-management</url>
 
 	<modules>
-		<module>product-catalog</module>
-		<module>product-catalog-api</module>
+		<module>common</module>
+		<module>customer-management-api</module>
+		<module>customer-management-impl</module>
+		<module>customer-management-web</module>
+		<module>customer-management</module>
 	</modules>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
-	</properties>
-
-	<scm>
-		<connection>scm:git:https://github.com/akshay-misra-backend-products/product-management.git</connection>
-		<developerConnection>scm:git:git@github.com:akshay-misra-backend-products/product-management.git</developerConnection>
-		<url>https://github.com/akshay-misra-backend-products/product-management</url>
-		<tag>0.0.1</tag>
-	</scm>
-
-	<distributionManagement>
-		<repository>
-			<id>bintray-akki2488-bss-product-management</id>
-			<name>akki2488-bss-product-management</name>
-			<url>https://api.bintray.com/maven/akki2488/bss-product-management/bss-product-management/;publish=1</url>
-		</repository>
-	</distributionManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
-				<inherited>false</inherited>
-				<configuration>
-					<outputDirectory>${basedir}/target</outputDirectory>
-					<resources>
-						<resource>
-							<directory>${basedir}</directory>
-							<include>bintray.json</include>
-							<filtering>true</filtering>
-						</resource>
-					</resources>
-				</configuration>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>bintray-akki2488-framework-core</id>
-			<name>bintray</name>
-			<url>https://dl.bintray.com/akki2488/framework-core</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>bintray-akki2488-web-app-authentication</id>
-			<name>bintray</name>
-			<url>https://dl.bintray.com/akki2488/web-app-authentication</url>
-		</repository>
-	</repositories>
 </project>

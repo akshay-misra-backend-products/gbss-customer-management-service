@@ -1,0 +1,4 @@
+FROM java:8
+EXPOSE 8080
+ADD /customer-management/target/customer-management-0.1.0.jar customer-management.jar
+ENTRYPOINT ["java", "-jar", "customer-management.jar"]
